@@ -51,18 +51,25 @@ a:hover{
 
 
 
-/* Estilos específicos para móviles */
+/* Media query para pantallas móviles */
 @media (max-width: 768px) {
     form {
-        width: 90%; /* Ajusta el ancho del formulario en dispositivos pequeños */
-        padding: 15px;
+        padding: 15px;  /* Reduce el padding en móviles */
+        width: 90%; /* Hace que el formulario ocupe más espacio en pantallas pequeñas */
+        max-width: none; /* Elimina el límite de ancho máximo */
     }
-
-    input, select, textarea {
-        width: 100%; /* Los campos ocuparán todo el ancho disponible */
-        padding: 10px;
+    h2 {
+        font-size: 24px;  /* Ajusta el tamaño del título */
+    }
+    input, textarea {
+        font-size: 14px;  /* Hace los campos de entrada más pequeños */
+    }
+    button {
+        font-size: 14px; /* Ajusta el tamaño del botón */
     }
 }
+
+
 
 
 
