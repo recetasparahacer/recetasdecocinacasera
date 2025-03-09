@@ -49,12 +49,7 @@ a:hover{
     }
 }
 
-/* Estilos generales */
-form {
-    width: 80%; /* Establece un ancho adecuado para pantallas grandes */
-    margin: 0 auto;
-    padding: 20px;
-}
+
 
 /* Estilos específicos para móviles */
 @media (max-width: 768px) {
