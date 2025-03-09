@@ -1,0 +1,146 @@
+
+/* Reset básico, para asegurarnos de que no haya interferencia con otros elementos */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Fondo claro */
+    padding-top: 60px; /* Evitar que el contenido quede cubierto por el menú fijo */
+    margin-left: 20px; /* Ajusta margen  pàgina web */
+}
+
+/* Estilo para tablas */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+/* Menú de navegación */
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fija el menú en la parte superior */
+    left: 0;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Menú de navegación (ul) */
+.navbar .menu {
+    list-style: none;
+    display: flex; /* Menú horizontal en escritorio */
+}
+
+.navbar .menu li {
+    margin-right: 15px;
+}
+
+.navbar .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar .menu a:hover {
+    background-color: #555; /* Color al pasar el ratón sobre los enlaces */
+}
+
+/* Menú desplegable */
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #444;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+    list-style: none;
+}
+
+.navbar .dropdown-content li a {
+    padding: 10px;
+    color: white;
+    display: block;
+}
+
+/* Mostrar submenú al hacer hover */
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Ocultar checkbox del menú (no visible) */
+#menu-toggle {
+    display: none;
+}
+
+/* Icono del menú hamburguesa */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Menú en pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Mostrar el icono hamburguesa */
+    .menu-icon {
+        display: block;
+    }
+
+    /* Mostrar el menú cuando el checkbox está marcado */
+    #menu-toggle:checked + .menu-icon + .menu {
+        display: flex;
+        flex-direction: column; /* El menú se muestra en columna */
+        background-color: #333;
+        position: absolute;
+        top: 50px; /* Menú debajo del navbar */
+        left: 0;
+        width: 100%;
+    }
+
+    /* Asegurarse de que los ítems ocupen todo el ancho en móviles */
+    .navbar .menu li {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Estilo de los enlaces en el menú desplegable */
+    .navbar .menu li a {
+        padding: 15px; /* Aumentamos el padding para hacerlos más grandes en móviles */
+        text-align: center;
+    }
+}
