@@ -100,6 +100,27 @@ input , textarea{
     }
 }
 
+    /* Evita que el texto se vea muy pequeño en los inputs */
+input, textarea {
+    font-size: 16px; /* Asegura que el texto se vea bien en móviles */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+/* Para que el formulario no se amplíe en móviles */
+@media (max-width: 480px) {
+    form {
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+    }
+    input, textarea {
+        font-size: 16px; /* Evita que los navegadores hagan zoom */
+    }
+}
+
+
     form{
         width: 100%;
     }
